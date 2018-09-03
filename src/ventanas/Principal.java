@@ -44,11 +44,11 @@ public class Principal {
     ManipularArchivo manipularArchivo = new ManipularArchivo();
 
     private void createUIComponents() {
-        // logo de la universidad para el software
+        // logo de la universidad para la aplicaciOn
         imageLogo = new JLabel(new ImageIcon("src/img/unirLogoSmall.png"));
-        //matriz para ingresar los sistemas de ecuaciones desde el software
+        //matriz para ingresar los sistemas de ecuaciones desde la aplicaciOn
         matrixTbl = new JTable();
-        //grupo de radioButtons para seleccionar la dimensiOn del sistema al momento de crearlo desde el software
+        //grupo de radioButtons para seleccionar la dimensiOn del sistema al momento de crearlo desde el aplicaciOn
         matrixSizeGroup.add(rb5x5);
         matrixSizeGroup.add(rb3x3);
         matrixSizeGroup.add(rb4x4);
@@ -60,7 +60,8 @@ public class Principal {
         searchBtn.addActionListener(new ActionListener() {
             /**
              * carga un archivo (*.xls) con la matriz del sistema de ecuaciones, ejecuta los mEtodos de organizaciOn
-             * y resuelve las matrices resultantes con el mEtodo de Gauss-Seidel
+             * y resuelve las matrices resultantes con el mEtodo de Gauss-Seidel.
+             * Imprime los resultados en el GUI y crea un archivo (*.xls) con los resultados.
              */
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -146,72 +147,16 @@ public class Principal {
                 }
             }
         });
-        helpBtn.addActionListener(new ActionListener() {
+
+        runInputMatrix.addActionListener(new ActionListener() {
             /**
-             * Muestra un mensaje de ayuda para el usuario explicando cOmo se debe crear el archivo de excel con la matriz
+             * lee la matriz ingrsada por el usuario con el sistema de ecuaciones, ejecuta los mEtodos de organizaciOn
+             * y resuelve las matrices resultantes con el mEtodo de Gauss-Seidel.
+             * Imprime los resultados en el GUI y crea un archivo (*.xls) con los resultados.
              */
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "El archivo (*.xls) debe contener una matriz cuadrada y un vector de términos independientes separados por una columna en blanco");
-            }
-        });
-
-        ayudaBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Presione 'Crear Nueva Matriz'     para ingresar los valores directamente en el programa. Esta opción permite trabajar con sistemas de las dimensiones predeterminadas." +
-                        "\nPresione 'Cargar Matriz Existente'     para cargar un archivo (*.xls) con la información del sistema. Esta opción permite trabajar con sistemas de N ecuaciones.");
-            }
-        });
-
-        crearMatrizBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                loadPnl.setVisible(false);
-                inputPnl.setVisible(true);
-                resultsPnl.setVisible(false);
-            }
-        });
-
-        cargarMatrizButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                inputPnl.setVisible(false);
-                loadPnl.setVisible(true);
-                resultsPnl.setVisible(false);
-            }
-        });
-
-        inputMatrixBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (rb3x3.isSelected()) {
-                    nEcuaciones = 3;
-                } else {
-                    if (rb4x4.isSelected()) {
-                        nEcuaciones = 4;
-                    } else {
-                        if (rb5x5.isSelected()) {
-                            nEcuaciones = 5;
-                        } else {
-                            if (rb6x6.isSelected()) {
-                                nEcuaciones = 6;
-                            } else {
-                                JOptionPane.showMessageDialog(null, "Debe seleccionar una dimensión para el sistema o cargar uno desde la otra opción.");
-                            }
-                        }
-                    }
-                }
-                tableModel = new DefaultTableModel(nEcuaciones, nEcuaciones + 2);
-                matrixTbl.setModel(tableModel);
-
-            }
-        });
-
-        runInputMatrix.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //reset datos
+                //se resetean los datos para que no afecten a las nuevas ejecuciones
                 lblDDC.setVisible(false);
                 lblEDDC.setVisible(false);
                 lblDDM.setVisible(false);
@@ -254,6 +199,11 @@ public class Principal {
                         lblEDDM.setVisible(true);
                     }
 
+                    /**
+                     * valida que la diagonal dominante no contenga ceros, de ser asI muestra un mensaje informativo al usuario
+                     * caso contrario valida la convergencia y presenta el nUmero de iteraciones que fueron ejecutadas o un mensaje
+                     * informando que el sistema no converge con la organizaciOn respectiva
+                     */
                     if (!organizar.checkDiagonalPrincipal(organizar.getDDC())) {
                         lblTxtIterDPC.setText("Esta organización ubicó un 0 en la diagonal principal, Gauss-Seidel no se ejecutó.");
                     } else {
@@ -279,6 +229,7 @@ public class Principal {
                         }
                     }
 
+                    //imprime la sumatoria de la diagonal principal obtenida de cada organizaciOn
                     lblDPC.setText(String.valueOf(organizar.getDiagonalPrincipal(organizar.getDDC())));
                     lblDPM.setText(String.valueOf(organizar.getDiagonalPrincipal(organizar.getDDM())));
 
@@ -289,10 +240,82 @@ public class Principal {
                 }
             }
         });
+
+        helpBtn.addActionListener(new ActionListener() {
+            /**
+             * Muestra un mensaje de ayuda para el usuario explicando cOmo se debe crear el archivo de excel con la matriz
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "El archivo (*.xls) debe contener una matriz cuadrada y un vector de términos independientes separados por una columna en blanco");
+            }
+        });
+
+        ayudaBtn.addActionListener(new ActionListener() {
+            /**
+             * Muestra un mensaje de ayuda para el usuario explicando las funcionalidades generales de la aplicaciOn
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Presione 'Crear Nueva Matriz'     para ingresar los valores directamente en el programa. Esta opción permite trabajar con sistemas de las dimensiones predeterminadas." +
+                        "\nPresione 'Cargar Matriz Existente'     para cargar un archivo (*.xls) con la información del sistema. Esta opción permite trabajar con sistemas de N ecuaciones.");
+            }
+        });
+
+        crearMatrizBtn.addActionListener(new ActionListener() {
+            /**
+             * Habilita el bloque de creaciOn de sistemas y oculta los otros paneles
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                loadPnl.setVisible(false);
+                inputPnl.setVisible(true);
+                resultsPnl.setVisible(false);
+            }
+        });
+
+        cargarMatrizButton.addActionListener(new ActionListener() {
+            /**
+             * Habilita el bloque de carga de archivos y oculta los otros paneles
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                inputPnl.setVisible(false);
+                loadPnl.setVisible(true);
+                resultsPnl.setVisible(false);
+            }
+        });
+
+        inputMatrixBtn.addActionListener(new ActionListener() {
+            /**
+             * Habilita las celdas necesarias en la tabla para ingresar un sistema de la dimensiOn seleccionada por el usuario
+             */
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (rb3x3.isSelected()) {
+                    nEcuaciones = 3;
+                } else {
+                    if (rb4x4.isSelected()) {
+                        nEcuaciones = 4;
+                    } else {
+                        if (rb5x5.isSelected()) {
+                            nEcuaciones = 5;
+                        } else {
+                            if (rb6x6.isSelected()) {
+                                nEcuaciones = 6;
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Debe seleccionar una dimensión para el sistema o cargar uno desde la otra opción.");
+                            }
+                        }
+                    }
+                }
+                tableModel = new DefaultTableModel(nEcuaciones, nEcuaciones + 2);
+                matrixTbl.setModel(tableModel);
+            }
+        });
     }
 
     public static void main(String[] args) {
-
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
