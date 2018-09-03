@@ -20,11 +20,10 @@
       <file leaf-file-name="Principal.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ventanas/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="317" column="43" selection-start-line="317" selection-start-column="43" selection-end-line="317" selection-end-column="43" />
+            <state relative-caret-position="256">
+              <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
               <folding>
                 <element signature="class#2062:7214" />
-                <element signature="class#7263:11716" />
                 <element signature="class#11766:12226" />
                 <element signature="class#12269:12953" />
                 <element signature="class#13002:13372" />
@@ -109,9 +108,9 @@
       <find>getNumIterColumna</find>
       <find>iterColumna</find>
       <find>getConvergeColumna</find>
-      <find>convergeColumna</find>
       <find>rese</find>
       <find>softwa</find>
+      <find>convergeColumna</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,9 +120,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/ventanas/CargarArchivo.java" />
-        <option value="$PROJECT_DIR$/src/ventanas/Principal.form" />
         <option value="$PROJECT_DIR$/src/ventanas/Organizar.java" />
         <option value="$PROJECT_DIR$/src/ventanas/ManipularArchivo.java" />
+        <option value="$PROJECT_DIR$/src/ventanas/Principal.form" />
         <option value="$PROJECT_DIR$/src/ventanas/Principal.java" />
       </list>
     </option>
@@ -179,7 +178,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="nimbus&#9;PSI&#9;JAVA://javax.swing.plaf.nimbus.NimbusStyle" />
-    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="82" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH" value="161" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE" value="ToolWindow" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -287,7 +286,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.3163752" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" visible="true" weight="0.3163752" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.53001463" side_tool="true" weight="0.20349762" />
@@ -308,34 +307,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.5270864" side_tool="true" visible="true" weight="0.20349762" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49772727" weight="0.23515625" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info x="153" y="134" width="322" height="486" id="UI Designer" order="4" sideWeight="0.5007949" weight="0.23572475" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49853587" weight="0.30047694" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3290938" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.3163752" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.47291362" visible="true" weight="0.20349762" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info id="Favorites" order="5" sideWeight="0.5022727" side_tool="true" weight="0.23572475" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -404,7 +375,6 @@
           <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -493,7 +463,6 @@
           <caret line="59" column="58" lean-forward="true" selection-start-line="59" selection-start-column="58" selection-end-line="59" selection-end-column="58" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -550,7 +519,6 @@
           <caret line="55" column="5" lean-forward="true" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -575,7 +543,6 @@
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -632,7 +599,6 @@
           <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -689,7 +655,6 @@
           <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -743,7 +708,6 @@
           <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />
@@ -978,11 +942,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ventanas/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="317" column="43" selection-start-line="317" selection-start-column="43" selection-end-line="317" selection-end-column="43" />
+        <state relative-caret-position="256">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
           <folding>
             <element signature="class#2062:7214" />
-            <element signature="class#7263:11716" />
             <element signature="class#11766:12226" />
             <element signature="class#12269:12953" />
             <element signature="class#13002:13372" />

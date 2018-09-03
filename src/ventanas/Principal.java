@@ -35,6 +35,7 @@ public class Principal {
     private JLabel lblDPM;
     private JLabel lblTxtIterDPC;
     private JLabel lblTxtIterDPM;
+    private JLabel lblInfoFile;
     double[][] matrizDatos;
     double[] termIndep;
     ButtonGroup matrixSizeGroup = new ButtonGroup();
@@ -72,12 +73,14 @@ public class Principal {
                 lblEDDM.setVisible(false);
                 lblIterDPC.setVisible(false);
                 lblIterDPM.setVisible(false);
+                lblInfoFile.setVisible(false);
                 lblTxtIterDPC.setText("");
                 lblTxtIterDPM.setText("");
                 lblIterDPC.setText("");
                 lblIterDPM.setText("");
                 lblDPC.setText("");
                 lblDPM.setText("");
+                lblInfoFile.setText("");
                 organizar.resetData();
 
                 try {
@@ -142,6 +145,8 @@ public class Principal {
 
                     //Crea el archivo con los resultados obtenidos de la ejecuciOn en la misma carpeta del archivo original
                     manipularArchivo.crear(organizar.getDDC(), organizar.getDDM(), organizar.getConvergeColumna(), organizar.getConvergeMatriz(), organizar.getNumIterColumna(), organizar.getNumIterMatriz(), organizar.getDiagonalPrincipal(organizar.getDDC()), organizar.getDiagonalPrincipal(organizar.getDDM()));
+                    lblInfoFile.setText("Se creó un archivo en la misma ruta del archivo cargado con los resultados.");
+                    lblInfoFile.setVisible(true);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
@@ -163,12 +168,14 @@ public class Principal {
                 lblEDDM.setVisible(false);
                 lblIterDPC.setVisible(false);
                 lblIterDPM.setVisible(false);
+                lblInfoFile.setVisible(false);
                 lblTxtIterDPC.setText("");
                 lblTxtIterDPM.setText("");
                 lblIterDPC.setText("");
                 lblIterDPM.setText("");
                 lblDPC.setText("");
                 lblDPM.setText("");
+                lblInfoFile.setText("");
                 organizar.resetData();
 
                 matrizDatos = new double[nEcuaciones][nEcuaciones];
@@ -235,6 +242,8 @@ public class Principal {
 
                     //Crea el archivo con los resultados obtenidos de la ejecuciOn en la misma carpeta del archivo original
                     manipularArchivo.crear(organizar.getDDC(), organizar.getDDM(), organizar.getConvergeColumna(), organizar.getConvergeMatriz(), organizar.getNumIterColumna(), organizar.getNumIterMatriz(), organizar.getDiagonalPrincipal(organizar.getDDC()), organizar.getDiagonalPrincipal(organizar.getDDM()));
+                    lblInfoFile.setText("Se creó un archivo en C/users/... con los resultados.");
+                    lblInfoFile.setVisible(true);
                 } catch (Exception e1) {
                     e1.printStackTrace();
                 }
